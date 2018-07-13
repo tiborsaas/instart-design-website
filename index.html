@@ -40,8 +40,7 @@
             ctx.beginPath();
             ctx.lineWidth = getRandom(55);
             const w = getRandom(width);
-            let dir = getRandom(1);
-            dir = dir === 1 ? 1 : -1;
+            const dir = getRandom(1) === 1 ? 1 : -1;
             ctx.moveTo(w, -10);
             ctx.lineTo(w + (SLOPE + getRandom(10)) * dir, height + 10);
             ctx.stroke();

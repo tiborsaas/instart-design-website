@@ -1,3 +1,3 @@
 # InstArt Design
 
-yes
+Landing page of http://instart.design

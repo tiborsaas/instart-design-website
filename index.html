@@ -1,59 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>InstArt Design</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        body, html {
-            height: 100%;
-            overflow: hidden;
-        }
-        canvas {
-            width: 100%;
-            height: 100%;
-        }
-        section {
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        section article {
-            text-align: center;
-            background: rgba(255,255,255,.9);
-            padding: 2rem 4rem;
-            font-size: 1.6rem;
-            font-family: 'Playfair Display', serif;
-        }
-        h1 {
-            letter-spacing: 1rem;
-            font-size: 2.62em;
-            font-weight: 100;
-        }
-        h1 span {
-            color: tomato;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 </head>
+
 <body>
     <canvas></canvas>
     <section class="text">
         <article>
+            <img src="assets/preview.gif" alt="">
             <h1>INST<span>ART</span></h1>
-            <p>instant design boutique</p>
-            <p>coming soon</p>
+            <p></p>
+            <p>private beta launching soon, request early access:</p>
+            <div>
+                <input type="email" name="email" placeholder="email address"> <button>Let me in</button>
+            </div>
+            <p class="credit">made by <a target="_" href="https://twitter.com/tiborsaas">@tiborsaas</a></p>
         </article>
     </section>
     <script>
@@ -63,14 +31,14 @@
         const ctx = canvas.getContext('2d');
         canvas.width = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
-        const {width, height} = canvas;
-        const defaultPalette = ['EF476F','FFD166','06D6A0','118AB2'];
+        const { width, height } = canvas;
+        const defaultPalette = ['EF476F', 'FFD166', '06D6A0', '118AB2'];
 
         ctx.fillStyle = '#073B4C';
         ctx.fillRect(0, 0, width, height);
         ctx.globalAlpha = 0.8;
 
-        for(let i=0; i<LINES; i++) {
+        for (let i = 0; i < LINES; i++) {
             ctx.strokeStyle = getRandomColor(defaultPalette);
             ctx.beginPath();
             ctx.lineWidth = getRandom(55);
@@ -86,8 +54,42 @@
         }
 
         function getRandomColor(palette) {
-            return `#${palette[getRandom(palette.length-1)]}`;
+            return `#${palette[getRandom(palette.length - 1)]}`;
+        }
+
+        /**
+         * setup subscription module
+         */
+        const submitButton = document.querySelector('button');
+        submitButton.addEventListener('click', submit);
+
+        function submit() {
+            submitButton.disabled = 'disabled';
+            const email = document.querySelector('input').value;
+            sendSubscription(email).then(displayResponse);
+        }
+
+        function sendSubscription(email) {
+            const payload = { email };
+            const getJson = response => response.json();
+
+            return fetch('http://shed.instart.design', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            }).then(getJson);
+        }
+
+        function displayResponse(rsp) {
+            if (rsp.status == 'ok') {
+                const formWrapper = document.querySelector('article div');
+                formWrapper.innerHTML = `<p>Thank you, I'll let you know when you can check it out.</p>`
+            }
         }
     </script>
 </body>
+
 </html>

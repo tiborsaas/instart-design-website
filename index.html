@@ -16,8 +16,7 @@
         <article>
             <img src="assets/preview.gif" alt="">
             <h1>INST<span>ART</span></h1>
-            <p></p>
-            <p>private beta launching soon, request early access:</p>
+            <p>Generative t-shirt store in <em>private beta</em> launching soon, request early access:</p>
             <div>
                 <input type="email" name="email" placeholder="email address"> <button>Let me in</button>
             </div>
@@ -61,12 +60,21 @@
          * setup subscription module
          */
         const submitButton = document.querySelector('button');
+        const formWrapper = document.querySelector('article div');
         submitButton.addEventListener('click', submit);
 
         function submit() {
-            submitButton.disabled = 'disabled';
             const email = document.querySelector('input').value;
+            if(!testEmail(email)) {
+                alert('Please provide a valid email address');
+                return;
+            }
             sendSubscription(email).then(displayResponse);
+            formWrapper.innerHTML = `<p>Please wait...</p>`
+        }
+
+        function testEmail(email) {
+            return (email.indexOf('@') > -1 && email.indexOf('.') > -1);
         }
 
         function sendSubscription(email) {
@@ -85,8 +93,7 @@
 
         function displayResponse(rsp) {
             if (rsp.status == 'ok') {
-                const formWrapper = document.querySelector('article div');
-                formWrapper.innerHTML = `<p>Thank you, I'll let you know when you can check it out.</p>`
+                formWrapper.innerHTML = `<p>Thank you, I'll let you know when it's done.</p>`
             }
         }
     </script>

@@ -1,0 +1,23 @@
+{
+  "name": "instart-design-website",
+  "version": "1.0.0",
+  "description": "Landing page of http://instart.design",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiborsaas/instart-design-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiborsaas/instart-design-website/issues"
+  },
+  "homepage": "https://github.com/tiborsaas/instart-design-website#readme",
+  "devDependencies": {
+    "cssnano": "^4.1.4",
+    "parcel-bundler": "^1.10.1"
+  }
+}

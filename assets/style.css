@@ -88,13 +88,13 @@ button:hover {
 @media(max-width: 1100px) {
     section article img {
         margin-top: 0;
-        /* width: 75%; */
+        width: 75%;
     }
 }
 
 @media(max-width: 770px) {
     section article img {
-        /* width: 100%; */
+        width: 100%;
     }
 
     section article {

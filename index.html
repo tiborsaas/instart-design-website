@@ -5,98 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>InstArt Design</title>
+    <title>Instart design</title>
     <link rel="stylesheet" href="/assets/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,900" rel="stylesheet">
 </head>
 
 <body>
     <canvas></canvas>
     <section class="text">
         <article>
-            <img src="assets/preview.gif" alt="">
-            <h1>INST<span>ART</span></h1>
-            <p>Generative t-shirt store in <em>private beta</em> launching soon, request early access:</p>
-            <div>
-                <input type="email" name="email" placeholder="email address"> <button>Let me in</button>
-            </div>
-            <p class="credit">made by <a target="_" href="https://twitter.com/tiborsaas">@tiborsaas</a></p>
+            <article class="content">
+                <h1>INSTART</h1>
+                <p>
+                    Generative t-shirt store in <em>private beta</em> launching soon,
+                    Read about more details
+                    <a href="https://blog.instart.design/posts/hello-instart/">in the intro blog post</a>.
+                    <strong>Request early access:</strong>
+                </p>
+                <div>
+                    <input type="email" name="email" placeholder="email address"> <button>Notify me on beta launch</button>
+                </div>
+            </article>
+            <aside>
+                <video autoplay controls>
+                    <source src="./video/promo.mp4" type="video/mp4">
+                </video>
+                <em>(video: 2.5MB)</em>
+            </aside>
+            <article class="credit">
+                made by <a target="_" href="https://twitter.com/tiborsaas">@tiborsaas</a>
+                | <a target="_" href="https://blog.instart.design/">Instart blog</a>
+                | <a target="_" href="https://www.instagram.com/instartdesign/">Instagram</a>
+                | <a target="_" href="https://www.facebook.com/instarthq/">Facebook</a>
+            </article>
         </article>
     </section>
-    <script>
-        const SLOPE = 150;
-        const LINES = 33;
-        const canvas = document.querySelector('canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-        const { width, height } = canvas;
-        const defaultPalette = ['EF476F', 'FFD166', '06D6A0', '118AB2'];
-
-        ctx.fillStyle = '#073B4C';
-        ctx.fillRect(0, 0, width, height);
-        ctx.globalAlpha = 0.8;
-
-        for (let i = 0; i < LINES; i++) {
-            ctx.strokeStyle = getRandomColor(defaultPalette);
-            ctx.beginPath();
-            ctx.lineWidth = getRandom(55);
-            const w = getRandom(width);
-            const dir = getRandom(1) === 1 ? 1 : -1;
-            ctx.moveTo(w, -10);
-            ctx.lineTo(w + (SLOPE + getRandom(10)) * dir, height + 10);
-            ctx.stroke();
-        }
-
-        function getRandom(max) {
-            return Math.round(Math.random() * max);
-        }
-
-        function getRandomColor(palette) {
-            return `#${palette[getRandom(palette.length - 1)]}`;
-        }
-
-        /**
-         * setup subscription module
-         */
-        const submitButton = document.querySelector('button');
-        const formWrapper = document.querySelector('article div');
-        submitButton.addEventListener('click', submit);
-
-        function submit() {
-            const email = document.querySelector('input').value;
-            if(!testEmail(email)) {
-                alert('Please provide a valid email address');
-                return;
-            }
-            sendSubscription(email).then(displayResponse);
-            formWrapper.innerHTML = `<p>Please wait...</p>`
-        }
-
-        function testEmail(email) {
-            return (email.indexOf('@') > -1 && email.indexOf('.') > -1);
-        }
-
-        function sendSubscription(email) {
-            const payload = { email };
-            const getJson = response => response.json();
-
-            return fetch('https://shed.instart.design', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            }).then(getJson);
-        }
-
-        function displayResponse(rsp) {
-            if (rsp.status == 'ok') {
-                formWrapper.innerHTML = `<p>Thank you, I'll let you know when it's done.</p>`
-            }
-        }
-    </script>
+    <script src="./js/landing.js"></script>
 </body>
 
 </html>

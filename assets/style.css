@@ -53,12 +53,12 @@ section article div {
     margin-top: .654321rem;
 }
 
-section article .credit {
+footer {
     margin: 3rem 0;
     font-size: 1.2rem;
     color: #9e9e9e;
 }
-    section article .credit a {
+    footer a {
         padding: 0 .5rem;
     }
 
@@ -169,5 +169,16 @@ button:hover {
     section article video {
         width: 100%;
         border-radius: inherit;
+    }
+}
+
+@media(max-width: 680px) {
+    footer {
+        text-align: center;
+        line-height: 2.5rem;
+    }
+
+    footer a {
+        display: block;
     }
 }

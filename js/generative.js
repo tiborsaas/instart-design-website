@@ -7,7 +7,7 @@ const ctx = canvas.getContext('2d');
 canvas.width = canvas.offsetWidth;
 canvas.height = canvas.offsetHeight;
 
-const SPACING = 90;
+const SPACING = 250;
 const { width, height } = canvas;
 const defaultPalette = ['EF476F', 'FFD166', '06D6A0', '118AB2'];
 let random = seededRandom(Math.random()*1500);
@@ -33,7 +33,7 @@ function drawPolygon(pos, offset) {
 
     const { x, y } = pos;
 
-    if (random() > .85) {
+    if (random() > .80) {
         polygon.fill(x, y, size, sides, rotation);
     } else {
         polygon.stroke(x, y, size, sides, rotation);

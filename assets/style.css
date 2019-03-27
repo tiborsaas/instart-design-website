@@ -63,16 +63,31 @@ footer {
     }
 
 section article .content {
-    display: flex;
-    flex-direction: column;
     justify-content: start;
     padding: 1rem;
     width: 75%;
+    text-align: center;
 }
+
     section article .content p {
         color: #111;
         font-size: 1.3rem;
         line-height: 1.5em;
+    }
+
+    section article .content div {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    section article .content .button {
+        color: #fff;
+        font-size: 1.3rem;
+        line-height: 1.5em;
+        background: black;
+        text-decoration: none;
+        display: inline-block;
+        padding: 1.5rem;
     }
 
     section article .content p strong {
@@ -101,9 +116,8 @@ h1 {
     height: 50px;
     background: transparent url(../assets/instart@2x.png) no-repeat center center;
     background-size: cover;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
     filter: invert(1) hue-rotate(180deg);
+    margin: 2rem auto;
 }
 
 input {

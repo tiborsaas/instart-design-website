@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build index.html --public-url https://instart.design/"
+    "build": "parcel build *.html --public-url https://instart.design/"
   },
   "repository": {
     "type": "git",
@@ -19,10 +19,13 @@
   "homepage": "https://github.com/tiborsaas/instart-design-website#readme",
   "devDependencies": {
     "cssnano": "^4.1.4",
-    "parcel-bundler": "^1.10.1"
+    "parcel-bundler": "^1.10.1",
+    "sass": "^1.22.10"
   },
   "dependencies": {
+    "bulma": "^0.7.5",
     "font-awesome.min.css": "^3.2.1",
+    "simplex-noise": "^2.4.0",
     "three": "^0.100.0"
   }
 }

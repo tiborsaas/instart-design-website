@@ -6,46 +6,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Instart design</title>
-    <link rel="stylesheet" href="/assets/style.css">
+	<link rel="stylesheet" href="/assets/scss/main.scss">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,900" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
     <meta property="og:image" content="./assets/instart-cover.png">
-    <meta name="description" content="Instart is a creative design store where you can create and customize unique t-shirts.">
+    <meta name="description"
+        content="Instart is a creative design store where you can create and customize unique t-shirts.">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147207070-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-147207070-1');
+    </script>
 </head>
 
 <body>
-    <canvas></canvas>
-    <section class="text">
-        <article>
-            <article class="content">
-                <h1>INSTART</h1>
-                <p>
-                    Generative t-shirt store in <em>private beta</em> launching soon,
-                    Read about more details
-                    <a href="https://blog.instart.design/posts/hello-instart/">in the intro blog post</a>.
-                    <strong>Request early access:</strong>
-                </p>
-                <div>
-                    <input type="email" name="email" placeholder="email address"> <button>Notify me on beta launch</button>
-                </div>
-                <div>and</div>
-                <a class="button" href="/catwalk.html">Visit the catwalk</a>
-            </article>
-            <aside>
-                <video autoplay controls width="100%">
-                    <source src="./video/promo.mp4" type="video/mp4">
-                </video>
-                <em>(video: 2.5MB)</em>
-            </aside>
-            <footer>
-                made by <a target="_" href="https://twitter.com/tiborsaas">@tiborsaas</a>
-                <a target="_" href="https://blog.instart.design/">Instart blog</a>
-                <a target="_" href="https://www.instagram.com/instartdesign/">Instagram</a>
-                <a target="_" href="https://www.facebook.com/instarthq/">Facebook</a>
-            </footer>
+    <section class="section index-hero hero">
+        <article id="canvasWrapper">
+            <canvas width="1200" height="1200"></canvas>
         </article>
+        <div class="container">
+            <div class="columns">
+                <div class="column is-10 is-offset-1 has-text-centered">
+                    <article class="logo">design</article>
+                    <h1 class="title is-1">Hyper customized fashion is here!</h1>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-10 is-offset-1">
+                    <video loop autoplay controls width="100%">
+                        <source src="./video/promo.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="features columns has-text-centered">
+                <div class="column is-third">
+                    <h3 class="title has-text-white">Endless possibilities</h3>
+                    <p>These algorithms provide you near infinite variety to create something unique and personal to you.</p>
+                </div>
+                <div class="column is-third">
+                    <h3 class="title has-text-white">3D power</h3>
+                    <p>With the 3D view you can see how the design would look like in real life, which accelerates the discovery of unexpected ideas.</p>
+                </div>
+                <div class="column is-third">
+                    <h3 class="title has-text-white">We print for you</h3>
+                    <p>We manufacture and ship the product after you are satisfied with the results.</p>
+                </div>
+            </div>
+        </div>
     </section>
-    <script src="./js/landing.js"></script>
+    <section class="section hero is-light">
+        <div class="container">
+            <div class="columns">
+                <div class="column has-text-centered is-8 is-offset-2">
+                    <h1 class="title is-2">Design Spaces</h1>
+                    <p class="is-size-4">Instart design doesn't feature any fixed design. We rather call various algorithms <strong>DESIGN SPACES</strong>. In these spaces you are free to explore the variery and boundaries. These spaces are closed which meanins they have limitations, but we firmly believe that the key to creatvity is to embrace limitations.</p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-third">
+                    <!-- <h3 class="title">Minimal mandala</h3> -->
+                    <article class="design-item">
+                        <img src="./images/gallery/shop-render-01.jpg" />
+                    </article>
+                </div>
+                <div class="column is-third">
+                    <!-- <h3 class="title">Circular</h3> -->
+                    <article class="design-item">
+                        <img src="./images/gallery/shop-render-02.jpg" />
+                    </article>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-third">
+                    <!-- <h3 class="title">Minimal mandala</h3> -->
+                    <article class="design-item">
+                        <img src="./images/gallery/shop-render-03.jpg" />
+                    </article>
+                </div>
+                <div class="column is-third">
+                    <!-- <h3 class="title">The gird</h3> -->
+                    <article class="design-item">
+                        <img src="./images/gallery/shop-render-04.jpg" />
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer is-warning hero">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Instart design</strong> is created by <a href="https://twitter.com/tiborsaas">Tibor Szasz</a>.
+                All rights reserved.
+            </p>
+            <p>
+                <a target="_" href="https://blog.instart.design/">Instart blog</a> -
+                <a target="_" href="https://www.facebook.com/instarthq/">Facebook</a> -
+                <a target="_" href="https://www.instagram.com/instartdesign/">Instagram</a>
+            </p>
+            <p>
+                <a href="contact.html">Contact</a> -
+                <a href="./terms.html">Terms and conditions</a> -
+                <a href="./privacy.html">Privacy policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="./js/backgroundAnimation.js"></script>
+    <script>
+        render();
+    </script>
 </body>
 
 </html>

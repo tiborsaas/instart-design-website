@@ -1,0 +1,129 @@
+// @import "../node_modules/bulma/bulma.sass";
+
+@import "../../node_modules/bulma/sass/utilities/_all.sass";
+@import "../../node_modules/bulma/sass/base/_all.sass";
+@import "../../node_modules/bulma/sass/layout/_all.sass";
+@import "../../node_modules/bulma/sass/grid/_all.sass";
+@import "../../node_modules/bulma/sass/elements/_all.sass";
+@import "../../node_modules/bulma/sass/components/navbar.sass";
+
+.columns p, .columns ul {
+    margin-bottom: 1rem;
+}
+
+.columns ul {
+    list-style-type: circle;
+    margin-left: 3rem;
+}
+
+.navbar .button {
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+}
+
+/**
+ * Homepage
+ */
+.index-hero {
+    color: #fff;
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-top: 4rem;
+
+    .logo {
+        width: 10rem;
+        height: 3rem;
+        background: transparent url(../instart@2x.png) no-repeat center center;
+        margin: auto;
+        background-size: cover;
+        margin-bottom: 4rem;
+        letter-spacing: 22px;
+        line-height: 8rem;
+    }
+
+    h1 {
+        color: inherit;
+        font-family: "Work Sans";
+        font-weight: normal;
+        margin-bottom: 3rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .button {
+        margin: 2rem;
+    }
+
+    #canvasWrapper {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -8rem;
+        overflow: hidden;
+
+        canvas {
+            margin: auto;
+            display: block;
+        }
+    }
+}
+
+.features {
+    margin-top: 1.5rem;
+}
+
+/**
+ * Index gallery
+ */
+.design-item {
+    width: 100%;
+    height: 32rem;
+    overflow: hidden;
+    display: flex;
+
+    img {
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/**
+ * Footer
+ */
+.footer {
+    padding: 5rem 6rem;
+}
+
+/**
+ * Products page
+ */
+.size-chart-wrapper {
+    margin-bottom: 4rem;
+
+    table {
+        margin-bottom: 0.5rem !important;
+    }
+}
+
+/**
+ * Utils
+ */
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+	width: 100%;
+	background: red;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

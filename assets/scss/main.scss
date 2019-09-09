@@ -7,6 +7,10 @@
 @import "../../node_modules/bulma/sass/elements/_all.sass";
 @import "../../node_modules/bulma/sass/components/navbar.sass";
 
+body {
+    font-family: 'rubik';
+}
+
 .columns p, .columns ul {
     margin-bottom: 1rem;
 }
@@ -44,7 +48,7 @@
 
     h1 {
         color: inherit;
-        font-family: "Work Sans";
+        // font-family: "Work Sans";
         font-weight: normal;
         margin-bottom: 3rem;
     }

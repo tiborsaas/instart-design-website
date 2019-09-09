@@ -46,11 +46,11 @@ body {
         line-height: 8rem;
     }
 
-    h1 {
+    h1.title.is-1 {
         color: inherit;
         // font-family: "Work Sans";
         font-weight: normal;
-        margin-bottom: 3rem;
+        margin-bottom: 0rem;
     }
 
     p {
@@ -59,6 +59,7 @@ body {
 
     .button {
         margin: 2rem;
+        padding-top: .7rem;
     }
 
     #canvasWrapper {

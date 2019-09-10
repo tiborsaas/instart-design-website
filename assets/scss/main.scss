@@ -68,6 +68,9 @@ body {
         right: 0;
         top: -8rem;
         overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         canvas {
             margin: auto;

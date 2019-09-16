@@ -46,9 +46,8 @@ body {
         line-height: 8rem;
     }
 
-    h1.title.is-1 {
+    h1.title {
         color: inherit;
-        // font-family: "Work Sans";
         font-weight: normal;
         margin-bottom: 0rem;
     }
@@ -103,6 +102,10 @@ body {
  */
 .footer {
     padding: 5rem 6rem;
+
+    a {
+        color: blue;
+    }
 }
 
 /**

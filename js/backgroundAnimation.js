@@ -4,13 +4,13 @@ const noise = new SimplexNoise();
 const { sin, cos, random, PI } = Math;
 const TWO_PI = PI * 2;
 
-let rings = 80;
-let dim_init = 0;
-let dim_delta = 4.5;
+let rings = 5;
+let dim_init = 1;
+let dim_delta = 44.5;
 
 let chaos_init = .0;
-let chaos_delta = 0.1;
-let chaos_mag = 8;
+let chaos_delta = 0.51;
+let chaos_mag = 9;
 
 let ox = random() * 10000;
 let oy = random() * 10000;
@@ -52,7 +52,7 @@ function render() {
 function getNoiseWithTime(radian, dim, time) {
     let r = radian % TWO_PI;
     if (r < 0.0) { r += TWO_PI; }
-    return noise.noise3D(ox + cos(r) * dim, oy + sin(r) * dim, oz + time);
+    return noise.noise2D(ox + cos(r) * dim, oy + sin(r) * dim);
 }
 
 window.render = render;

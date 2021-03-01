@@ -27,6 +27,6 @@
     "bulma": "^0.7.5",
     "font-awesome.min.css": "^3.2.1",
     "simplex-noise": "^2.4.0",
-    "three": "^0.100.0"
+    "three": "^0.125.0"
   }
 }
